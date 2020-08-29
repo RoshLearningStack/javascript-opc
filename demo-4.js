@@ -8,9 +8,18 @@
             this.lastName = lastName;
             this.age = age;
         }
+        get fullName() {
+            return this.firstName + ' ' + this.lastName;
+        }
+        set fullName(fullName) {
+            var nameParts = fullName.split(' ');
+            this.firstName = nameParts[0];
+            this.lastName = nameParts[1];
+        }
     }
 
     let jim = new Person('Jim', 'Cooper', 29);
-    display(jim);
+    jim.fullName = 'Roshan Deniyage';
+    display(jim.fullName);
 
 })();
