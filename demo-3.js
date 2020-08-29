@@ -17,14 +17,22 @@ function Person(firstName, lastName) {
 }
 Person.prototype.age = 29;
 
-display(Person.prototype);
+// display(Person.prototype);
 
 let jim = new Person('Jim', 'Cooper');
 let sofia = new Person('Sofia', 'Cooper');
-sofia.__proto__.age = 23;
-display(jim.__proto__);
-display(sofia.__proto__);
-display(Person.prototype === jim.__proto__);
+// sofia.__proto__.age = 23;
+// display(jim.__proto__);
+// display(sofia.__proto__);
+// display(Person.prototype === jim.__proto__);
+
+Person.prototype = {age : 18};
+let kris = new Person('Kris', 'Cooper');
+
+display(Person.prototype);
+display(jim.age);
+display(sofia.age);
+display(kris.age);
 
 
 })();
