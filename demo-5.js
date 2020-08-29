@@ -2,11 +2,15 @@
 
 (function() {
 
-    function checkPasswordComplexity(password) {
-        let regex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$', 'gi');
-        return regex.test(password);
+    function findAlerts(logData) {
+        let regex = /ERROR:/;
+
+        return regex.exec(logData);
     }
 
-    display(checkPasswordComplexity('Stronger1'));
+    let logData = 'INFO:ok;ERROR:Something broke;';
+    let result = findAlerts(logData);
+
+    display(result);
 
 })();
