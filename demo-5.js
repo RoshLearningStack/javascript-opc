@@ -2,7 +2,11 @@
 
 (function() {
 
-    let date  = new Date('2050-03-25T13:01:30Z');
-    display(date.toString());
+    function checkPasswordComplexity(password) {
+        let regex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$', 'gi');
+        return regex.test(password);
+    }
+
+    display(checkPasswordComplexity('Stronger1'));
 
 })();
