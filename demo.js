@@ -45,9 +45,19 @@
     this.age = age,
     this.isAdult = function() {return this.age > 18}
   }
-  let personJim = new Person('Jim', 'Cooper', 29);
-  let personSofia = new Person('Sofia', 'Cooper', 17);
-  display(personJim);
-  display(personSofia);
+  // let personJim = new Person('Jim', 'Cooper', 29);
+  // let personSofia = new Person('Sofia', 'Cooper', 17);
+  // display(personJim);
+  // display(personSofia);
 
+  // Object.create function
+
+  let person2 = Object.create(Object.prototype, {
+    firstName : {value: 'Jim', enumerable: true, writable: true, configurable: true},
+    lastName : {value: 'Cooper', enumerable: true, writable: true, configurable: true},
+    age : {value: 16, enumerable: true, writable: true, configurable: true}
+  })
+
+  display(person1);
+  display(person2);
 })();
