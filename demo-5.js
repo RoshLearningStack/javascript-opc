@@ -1,8 +1,8 @@
 'use strict';
 
 (function() {
-    
-    display(Math.PI);
-    display(Math.max(2, 42, 29));
-    display(Math.round(29.33));
+
+    let date  = new Date('2050-03-25T13:01:30Z');
+    display(date.toString());
+
 })();
