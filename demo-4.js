@@ -16,10 +16,13 @@
             this.firstName = nameParts[0];
             this.lastName = nameParts[1];
         }
+        isAdult() {
+            return this.age >= 18;
+        }
     }
 
     let jim = new Person('Jim', 'Cooper', 29);
     jim.fullName = 'Roshan Deniyage';
-    display(jim.fullName);
+    display(jim.isAdult());
 
 })();
