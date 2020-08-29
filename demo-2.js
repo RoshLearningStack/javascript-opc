@@ -8,13 +8,13 @@
     };
     
     // Enumerable
-    Object.defineProperty(person, 'firstName', {enumerable: false});
+    // Object.defineProperty(person, 'firstName', {enumerable: false});
     // properties
-    for (const propetyName in person) {
-        display(propetyName + ': ' + person[propetyName]);
-    }
-    display(Object.keys(person));
-    display(JSON.stringify(person));
+    // for (const propetyName in person) {
+    //     display(propetyName + ': ' + person[propetyName]);
+    // }
+    // display(Object.keys(person));
+    // display(JSON.stringify(person));
 
     // Property discriptor
     // Change property writable
@@ -27,6 +27,12 @@
     // Try to update read only property
     // person.firstName = 'Roshan';
 
+    // Configurable
+    Object.defineProperty(person, 'firstName', {configurable: false});
+    Object.defineProperty(person, 'firstName', {enumerable: true});
+
+    delete person.firstName;
+    display(person);
 
 
 })();
