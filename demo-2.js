@@ -8,7 +8,10 @@
     };
     
     // properties
-    for (const propetyName in person) {
-        display(propetyName + ': ' + person[propetyName]);
-    }
+    // for (const propetyName in person) {
+    //     display(propetyName + ': ' + person[propetyName]);
+    // }
+
+    // Property discriptor
+    display(Object.getOwnPropertyDescriptor(person, "firstName"));
 })();
