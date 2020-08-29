@@ -1,13 +1,27 @@
 'use strict'; 
 (function() {
 
+  // function registerUser(firstName, lastName) {
+  //   let person = {
+  //     firstName,
+  //     lastName
+  //   };
+  //   display(person);
+  // }
+
+  // registerUser('Jim', 'Cooper');
+
   let person = {
-    firstName : 'Jim',
+    firstName: 'Jim',
     lastName: 'Cooper',
-    age : 17,
-    isAdult : function() {return this.age > 18;}
-  }
+    age: 18,
+    isAdult() {return this.age > 18}
+  };
   
-  display(person.isAdult());
+  for (const propertyName in person) {
+    if (person.hasOwnProperty(propertyName)) {
+      display(propertyName);      
+    }
+  }
 
 })();
