@@ -26,6 +26,10 @@
             super(firstName, lastName, age);
             this._enrolledCourses = [];
         }
+        
+        static fromPerson(person) {
+            return new Student(person.firstName, person.lastName, person.age);
+        }
 
         enroll(courseId) {
             this._enrolledCourses.push(courseId);
@@ -36,17 +40,7 @@
         }
     }
 
-
-    Object.defineProperty(Person.prototype, 'fullName', {enumerable: true});
-
     let jim = new Person('Jim', 'Cooper', 29);
-    jim.fullName = 'Roshan Deniyage';
-    display(jim);
-
-    let jimStudent = new Student('Jim', 'Cooper', 29);
-    jimStudent.enroll('CS205');
-    jimStudent.enroll('CS206');
-    jimStudent.enroll('CS207');
-    display(jimStudent.getCourses());
-
+    let jimStudent = Student.fromPerson(jim);
+    display(jimStudent);
 })();
