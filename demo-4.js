@@ -20,9 +20,11 @@
             return this.age >= 18;
         }
     }
+    
+    Object.defineProperty(Person.prototype, 'fullName', {enumerable: true});
 
     let jim = new Person('Jim', 'Cooper', 29);
     jim.fullName = 'Roshan Deniyage';
-    display(jim.isAdult());
+    display(jim);
 
 })();
